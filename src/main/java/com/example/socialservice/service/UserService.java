@@ -32,4 +32,10 @@ public class UserService {
     public void deleteUser(String userId) {
         userRepository.deleteById(userId);
     }
+
+    // for validation
+    public boolean emailExist(String email) {
+        boolean exist = userRepository.existsByEmail(email);
+        return exist;
+    }
 }

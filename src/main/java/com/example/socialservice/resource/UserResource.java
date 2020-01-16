@@ -3,6 +3,7 @@ package com.example.socialservice.resource;
 import com.example.socialservice.model.User;
 import com.example.socialservice.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -25,7 +26,7 @@ public class UserResource {
     }
 
     @PostMapping
-    public User saveUser(@RequestBody User user) {
+    public User saveUser(@Validated @RequestBody User user) {
         return userService.saveUser(user);
     }
 

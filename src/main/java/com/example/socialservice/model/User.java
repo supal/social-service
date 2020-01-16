@@ -1,5 +1,6 @@
 package com.example.socialservice.model;
 
+import com.example.socialservice.validator.UniqueEmailAddress;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,6 +23,7 @@ public class User {
 
     private String name;
 
+    @UniqueEmailAddress
     private String email;
 
     private String profilePhotoUrl;
